@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api-fast:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - "8095:8095"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:apifast
+      SPRING_DATASOURCE_USERNAME: sasa
+      SPRING_DATASOURCE_PASSWORD: sasa
+    restart: always
