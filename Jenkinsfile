@@ -13,6 +13,7 @@ pipeline{
         }
         stage('Deploy'){
             steps{
+                sh "docker-compose --version"
                 sh "docker-compose down -v"
                 sh "docker-compose up -d --build"
             }
